@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dream-rsi"
+version = "0.1.0"
+description = "Local reproduction of Dream-RSI: Recursive Self-Improvement through Evolving Worlds"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Dream-RSI contributors" }]
+keywords = ["recursive-self-improvement", "tree-search", "replay-simulation", "agents"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# The runtime is intentionally stdlib-only: the whole pipeline, including the
+# sandboxed evaluator and the OpenAI-compatible HTTP client, runs with no
+# third-party dependencies. This keeps the reproduction trivially portable.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+dream-rsi = "run_rsi_loop:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = [
+  "integration: slower end-to-end tests that exercise a full RSI cycle",
+  "sandbox: tests that spawn subprocesses to verify evaluator isolation",
+]
+
+[tool.uv]
+package = true

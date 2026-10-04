@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Runtime artefacts produced by run_rsi_loop.py (the code is the deliverable;
+# these are data).  storage/*/.gitkeep keeps the directories in the tree.
+storage/trees/*.json
+storage/policies/*/
+storage/reports/
+storage/llm_cache.json
+storage/eval_cache.json
+*.py.bak
