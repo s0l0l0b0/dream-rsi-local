@@ -8,7 +8,11 @@ __pycache__/
 # these are data).  storage/*/.gitkeep keeps the directories in the tree.
 storage/trees/*.json
 storage/policies/*/
+storage/policies/*.json
 storage/reports/
 storage/llm_cache.json
 storage/eval_cache.json
+# --smoke evolves a copy here so it never touches the tracked policy file
+storage/*.py
+storage/*.py.bak
 *.py.bak
