@@ -12,7 +12,7 @@ wheels = [
 ]
 
 [[package]]
-name = "dream-rsi"
+name = "dream-rsi-local"
 version = "0.1.0"
 source = { editable = "." }
 

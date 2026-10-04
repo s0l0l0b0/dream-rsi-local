@@ -1,7 +1,9 @@
 # Dream-RSI (local reproduction)
 
-A dependency-free, offline-runnable reproduction of **Dream-RSI: Recursive
-Self-Improvement through Evolving Worlds**.
+Repository **`dream-rsi-local`** — a dependency-free, offline-runnable reproduction
+of **Dream-RSI: Recursive Self-Improvement through Evolving Worlds**.
+(``Dream-RSI`` is the method from the paper; this repository is an independent
+local implementation of it.)
 
 The idea in one paragraph: the model's weights never change. What changes is the
 *executable search policy* — the Python code that decides which strategy to try
@@ -36,6 +38,9 @@ winners into the live policy.
 Runtime is **standard library only** (Python ≥ 3.10). No install needed:
 
 ```bash
+git clone https://github.com/s0l0l0b0/dream-rsi-local.git
+cd dream-rsi-local
+
 uv sync --extra dev          # creates .venv + uv.lock, installs pytest
 
 # Full RSI cycle, offline, from the shipped untuned policy_v0

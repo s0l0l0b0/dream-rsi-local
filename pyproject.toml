@@ -3,7 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "dream-rsi"
+# Distribution name matches the repository, so this reproduction cannot be
+# confused with -- or collide with -- an official "dream-rsi" package.
+name = "dream-rsi-local"
 version = "0.1.0"
 description = "Local reproduction of Dream-RSI: Recursive Self-Improvement through Evolving Worlds"
 readme = "README.md"
@@ -25,6 +27,7 @@ dev = ["pytest>=8.0"]
 
 [project.scripts]
 dream-rsi = "run_rsi_loop:main"
+dream-rsi-local = "run_rsi_loop:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
